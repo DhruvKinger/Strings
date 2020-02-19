@@ -1,0 +1,83 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+int value(char x)
+{
+    if(x=='I')
+   { return 1;
+    
+       
+   }
+    if(x=='V')
+    {
+        return 5;
+        
+    }
+    if(x=='X')
+    {
+        return 10;
+    }
+    if(x=='L')
+    {
+        return 50;
+    }
+    if(x=='C')
+    {
+        return 100;
+    }
+    if(x=='D')
+    {
+        return 500;
+    }
+    if(x=='M')
+    {
+        return 1000;
+    }
+    return -1;
+    
+    
+}
+
+int roman_to_integer(string &s)
+{
+int res=0;
+  //cout<<s.length();
+    
+  for(int i=0;i<s.length();i++)
+ {
+    int s1=value(s[i]);
+    if(i+1<s.length())
+    {
+        int s2=value(s[i+1]);
+        if(s1>=s2)
+        {
+        res+=s1;
+        }
+        
+        else
+        {
+        res+=s2-s1;
+         i++;
+        }
+    
+    }
+    
+    else
+    {
+        res+=s1;
+    }
+    
+    
+     }
+ return res;
+
+}
+
+int main()
+{
+   
+   string s="MCMIX";
+   cout<<"Integer value is: "<<roman_to_integer(s);
+
+    return 0;
+}
