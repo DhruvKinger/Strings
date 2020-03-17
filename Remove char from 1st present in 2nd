@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    string x="Hello World";
+    string y="Hld";
+    int a[10];
+      for(int i=0;i<x.size();i++)
+     {
+         
+     for(int j=0;j<y.size();j++)
+     {
+      
+      if(x[i]==y[j])
+      {
+         
+          x.erase(x.begin()+i);
+        
+      }
+      
+     }
+         
+    } 
+    std::cout << x << std::endl;
+    return 0;
+}
