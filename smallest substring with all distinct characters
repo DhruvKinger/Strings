@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+using namespace std;
+int cal_count(string x,int n)
+{
+    int c=0;
+   map<char,int> mp;
+   for(int i=0;i<n;i++)
+   {
+       mp[x[i]]++;
+   }
+   for(auto i:mp)
+   {
+       if(i.second)
+       {
+           c++;
+       }
+   }
+       return c;
+}
+
+int main()
+{
+    string s="axcadaxcd";
+    int n=s.length();
+    int min_l=n;
+    int max=cal_count(s,n);
+    
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<n;j++)
+        {
+            
+            string sub=s.substr(i,j);
+            int sub_l=sub.length();
+            int sub_dist=cal_count(sub,sub_l);
+            
+            
+            if(sub_l<min_l && sub_dist==max )
+            min_l=sub_l;
+            
+        }
+    }
+    std::cout << min_l << std::endl;
+    return 0;
+}
