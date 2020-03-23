@@ -1,0 +1,17 @@
+static String pangrams(String s) {
+        int c=0;
+  String s1=s.toLowerCase();  
+for(int i=97;i<=122;i++)
+{
+    if(s1.indexOf(i)!=-1)
+    {
+        c++;
+    }
+
+}
+    if(c==26)
+    return "pangram";
+
+else
+return "not pangram";
+    }
