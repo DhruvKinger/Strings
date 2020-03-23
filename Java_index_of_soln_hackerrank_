@@ -1,0 +1,22 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    // Complete the twoStrings function below.
+    static String twoStrings(String s1, String s2) {
+
+for(int i=97;i<=122;i++)
+    {
+        if(s1.indexOf(i)!=-1 && s2.indexOf(i)!=-1)
+        return "YES";
+    }
+    
+    
+    return "NO";
+}
