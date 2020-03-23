@@ -1,0 +1,19 @@
+string funnyString(string s) {
+
+string r;
+r=s;int c=0;
+int n=s.size();
+reverse(r.begin(),r.end());
+for(int i=1;i<n;i++)
+{
+    if(abs(s[i]-s[i-1])==abs(r[i]-r[i-1]))
+    {
+        c++;
+    }
+}
+if(c==n-1)
+{
+    return "Funny";
+}
+return "Not Funny";
+}
