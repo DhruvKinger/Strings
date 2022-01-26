@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+using namespace std;
+// Program to Check if Character is present in every String inside a Vector of String 
+int gemstones(vector<string> arr) {
+
+map<char,int> mp;
+
+string s="";
+int size=arr.size();
+for(int i = 0; i < size; i++)
+{
+    sort(arr[i].begin(), arr[i].end()); // Sort a String
+    arr[i].erase(unique(arr[i].begin(), arr[i].end()),arr[i].end());
+    // Remove duplicate Characters inside String of Vectors
+    s+=arr[i];         
+}
+
+
+for(int j=0;j<s.size();j++)
+{
+    mp[s[j]]++;
+}
+
+int c=0;
+for(auto y:mp)
+{
+    if(y.second==size)
+    {
+        c++;
+    }    
+}
+
+
+return c;
+}
+
